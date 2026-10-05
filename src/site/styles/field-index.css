@@ -73,8 +73,8 @@ body { min-width: 320px; color: var(--ink); background: var(--paper); }
   backdrop-filter: blur(12px);
 }
 .field-brand { display: inline-flex; align-items: center; gap: .7rem; min-width: max-content; }
-.field-brand .brand-mark { width: 2.2rem; height: 2.2rem; border-radius: 4px; color: var(--intro-ink); background: var(--green); }
-.field-brand .brand-mark i { border-color: var(--header-surface); }
+.brand-mark-image { display: block; width: 2.2rem; height: 2.2rem; flex: 0 0 auto; object-fit: contain; }
+.brand-mark-image--small { width: 1.8rem; height: 1.8rem; }
 .field-brand > span:last-child { display: grid; gap: .18rem; }
 .field-brand strong { font-size: .69rem; font-weight: 800; letter-spacing: .025em; }
 .field-brand small { color: var(--muted); font: .49rem var(--mono); letter-spacing: .045em; }
@@ -85,7 +85,15 @@ body { min-width: 320px; color: var(--ink); background: var(--paper); }
 .language-switch { padding: .15rem; border-radius: 4px; }
 .language-switch button { min-width: 1.8rem; padding: .35rem; border-radius: 3px; font-size: .55rem; }
 .language-switch button[aria-pressed='true'] { color: var(--intro-ink); background: var(--green); }
-.theme-toggle { width: 2.25rem; height: 2.25rem; border-radius: 4px; }
+.theme-toggle { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; padding: 0; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--blue-link); background: transparent; cursor: pointer; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+.theme-toggle:hover { border-color: var(--blue-link); background: var(--surface-subtle); }
+.theme-toggle__icon { display: block; width: 1.15rem; height: 1.15rem; overflow: visible; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle__sun, .theme-toggle__moon { transform-box: fill-box; transform-origin: center; transition: opacity .28s ease, transform .38s cubic-bezier(.2,.75,.25,1); }
+.theme-toggle__sun { opacity: 0; transform: rotate(-35deg) scale(.62); }
+.theme-toggle__moon { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle__icon--dark .theme-toggle__sun { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle__icon--dark .theme-toggle__moon { opacity: 0; transform: rotate(35deg) scale(.62); }
+.theme-toggle:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
 
 .field-document { width: min(100% - 2 * var(--page-pad), var(--content-max)); margin-inline: auto; }
 .document-meta { display: flex; justify-content: space-between; gap: 1rem; padding-block: 2.2rem .85rem; border-bottom: 1px solid var(--line); color: var(--muted); font: .55rem var(--mono); letter-spacing: .075em; }
@@ -186,7 +194,7 @@ body { min-width: 320px; color: var(--ink); background: var(--paper); }
 @media (max-width: 700px) {
   html { scroll-padding-top: 7.2rem; }
   .field-header { position: sticky; grid-template-columns: 1fr auto; gap: .35rem .75rem; min-height: 0; padding-block: .55rem; }
-  .field-brand .brand-mark { width: 1.9rem; height: 1.9rem; }
+  .brand-mark-image { width: 1.9rem; height: 1.9rem; }
   .field-brand strong { font-size: .61rem; }
   .field-brand small { display: block; font-size: .44rem; }
   .field-tools { grid-column: 2; grid-row: 1; }
