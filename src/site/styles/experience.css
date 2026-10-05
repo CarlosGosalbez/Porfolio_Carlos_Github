@@ -53,17 +53,3 @@
 .experience-item:not([open]) .experience-label--closed { display: inline; }
 
 .experience-item__period { font-size: .69rem; }
-
-.experience-item__toggle { font-size: .67rem; }
-
-.industry-experience { display: grid; grid-template-columns: minmax(15rem, .8fr) 1.2fr; align-items: center; gap: 2rem; margin-top: 2rem; padding-top: 1.55rem; border-top: 1px solid var(--line); }
-.industry-experience__copy .eyebrow { margin: 0; color: var(--blue-link); font-size: .62rem; }
-.industry-experience__copy > p:last-child { max-width: 34rem; margin: .6rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; }
-.industry-experience ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .55rem; margin: 0; padding: 0; list-style: none; }
-.industry-experience li { padding: .55rem .8rem; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--text-strong); background: var(--surface-card); font-size: .72rem; font-weight: 650; }
-
-@media (max-width: 700px) {
-  .industry-experience { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.2rem; }
-  .industry-experience ul { justify-content: flex-start; gap: .45rem; }
-  .industry-experience li { padding: .48rem .68rem; font-size: .68rem; }
-}

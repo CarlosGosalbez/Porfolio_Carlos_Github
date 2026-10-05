@@ -6,7 +6,7 @@
 @import './styles/projects.css';
 @import './styles/experience.css';
 @import './styles/skills.css';
-@import './styles/career.css';
+@import './styles/qa-loop.css';
 @import './styles/education.css';
 @import './styles/contact.css';
 @import './styles/footer.css';
@@ -14,3 +14,4 @@
 @import './styles/responsive.css';
 @import './styles/motion.css';
 @import './styles/geek.css';
+@import './styles/engineering.css';

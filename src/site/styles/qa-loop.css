@@ -1,0 +1,18 @@
+.qa-loop { padding-block: clamp(5.5rem, 10vw, 9rem); background: var(--surface-subtle); }
+.qa-loop .section-heading { max-width: 58rem; }
+.qa-loop .section-heading h2 { max-width: 16ch; }
+.qa-loop .section-heading h2 em { color: var(--blue); font-style: normal; }
+.qa-loop-intro { max-width: 48rem; margin-top: 1.6rem; }
+.qa-loop-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: clamp(2.5rem, 5vw, 4rem); border: 1px solid var(--line); background: var(--line); }
+.qa-loop-card { position: relative; min-height: 16rem; padding: clamp(1.4rem, 3vw, 2.4rem); background: var(--surface-card); }
+.qa-loop-card__number { position: absolute; top: 1.35rem; right: 1.5rem; color: var(--text-subtle); font: .65rem var(--mono); }
+.qa-loop-card__label { margin: 0 2rem 1.5rem 0; color: var(--blue); font: .67rem var(--mono); letter-spacing: .08em; }
+.qa-loop-card__label::before { margin-right: .4rem; color: var(--coral); content: '>'; }
+.qa-loop-card h3 { max-width: 22rem; margin: 0; color: var(--text-strong); font-size: clamp(1.3rem, 2.2vw, 1.8rem); letter-spacing: -.055em; }
+.qa-loop-card__body { max-width: 34rem; margin: .8rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.8; }
+
+@media (max-width: 700px) {
+  .qa-loop { padding-block: 5rem; }
+  .qa-loop-grid { grid-template-columns: 1fr; margin-top: 2.3rem; }
+  .qa-loop-card { min-height: 0; padding: 1.35rem; }
+}

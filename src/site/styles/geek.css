@@ -1,6 +1,6 @@
 .hero .eyebrow,
 .project-card__meta,
-.career-card__level,
+.qa-loop-card__label,
 .contact-footer > span {
   font-family: var(--mono);
 }
@@ -22,17 +22,6 @@
   box-shadow: 0 0 0 .2rem #64b77e20, 0 0 .75rem #64b77e70;
 }
 
-.career-card__level::before {
-  margin-right: .4rem;
-  color: var(--coral);
-  content: '>';
-}
-
-.hire-game__copy .eyebrow::before {
-  margin-right: .45rem;
-  color: var(--green);
-  content: '//';
-}
 
 .art-index,
 .financial-ai-caption,
