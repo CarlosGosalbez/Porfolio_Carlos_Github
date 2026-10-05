@@ -1,122 +1,270 @@
-const translations = {
+import type { ReactNode } from 'react'
+
+export type Language = 'es' | 'en'
+
+type ProjectCopy = {
+  name: string
+  category: string
+  headline: string
+  description: string
+  buildNotes: string
+  contribution: string
+  status: string
+  access: string
+  linkLabel?: string
+}
+
+type Copy = {
+  language: string
+  skip: string
+  navLabel: string
+  menu: string
+  close: string
+  themeToDark: string
+  themeToLight: string
+  metaTitle: string
+  metaDescription: string
+  nav: string[]
+  availability: string
+  location: string
+  title: string
+  heroTitle: ReactNode
+  intro: string
+  explore: string
+  journey: string
+  heroFootLeft: string
+  heroFootRight: string
+  stripTop: ReactNode
+  stripBottom: string
+  sections: string[]
+  artLabel: string
+  projectsTitle: ReactNode
+  projectsAside: string
+  projectScope: string
+  projectBuild: string
+  projectRole: string
+  stackLabel: string
+  myPulseCaption: string
+  projects: ProjectCopy[]
+  loopTitle: ReactNode
+  loopIntro: string
+  loopCards: { label: string; title: string; body: string }[]
+  experienceTitle: ReactNode
+  experienceAside: string
+  current: string
+  expand: string
+  collapse: string
+  experience: { role: string; detail: string }[]
+  experiencePeriods: string[]
+  companies: string[]
+  skillsTitle: ReactNode
+  skillsIntro: string
+  skillGroups: string[]
+  profileTitle: ReactNode
+  story: string
+  impact: string
+  projectsLink: string
+  profileNote: string
+  noteLabel: string
+  approach: { title: string; body: string }[]
+  educationTitle: ReactNode
+  education: { title: string; detail: string }[]
+  languagesTitle: string
+  languageLevels: string[]
+  contactEyebrow: string
+  contactTitle: ReactNode
+  contactIntro: string
+  emailSubject: string
+  emailLabel: string
+  linkedinLabel: string
+  contactFooter: string
+  idea: string
+  agent: string
+  flow: string
+  result: string
+  human: string
+  loop: string
+}
+
+const copy: Record<Language, Copy> = {
   es: {
-    language: 'Idioma', skip: 'Saltar al contenido', navLabel: 'Navegación principal', menu: 'Menú', close: 'Cerrar', themeToDark: 'Activar modo oscuro', themeToLight: 'Activar modo claro', metaTitle: 'Carlos Gosálbez — QA, cazabugs y productos con IA', metaDescription: 'QA y automatización en Alicante, con mirada de producto, radar para los bugs y proyectos propios construidos con IA. Abierto a nuevas misiones profesionales.',
-    nav: ['Misiones', 'Dónde encajo', 'Proyectos', 'Ficha', 'Hablemos'], availability: 'Abierto a nuevas misiones · remoto e híbrido',
-    location: 'ALICANTE, ESPAÑA', title: 'QA · CAZABUGS · PRODUCTOS CON IA', heroTitle: <>Calidad que<br /><em>mueve</em> las ideas<br />hacia delante</>,
-    intro: 'Aporto experiencia en QA y automatización, con una mirada de producto y experiencia dirigiendo proyectos propios construidos con IA.',
-    explore: 'Ver experiencia', journey: 'Ver proyectos', heroFootLeft: 'MODO CURIOSO: ACTIVADO', heroFootRight: 'SCROLL PARA EXPLORAR',
-    stripTop: <>DE AUTOMATIZAR PROCESOS<br />A <span>CAZAR BUGS CON MÉTODO.</span></>, stripBottom: 'QA × AUTOMATION × PRODUCT',
-    sections: ['LOG DE MISIONES', 'INVENTARIO DE SKILLS', 'SIGUIENTE NIVEL', 'PROYECTOS EN EL RADAR', 'FICHA DEL PERSONAJE', 'TALLER Y LORE'],
-    profileTitle: <>La calidad empieza<br />mucho antes del test.</>, story: 'Mi recorrido empezó en la automatización RPA y evolucionó hacia el aseguramiento de calidad y la automatización de pruebas. Además de mi trabajo en QA, impulso proyectos propios desde la idea: investigo, aprendo las herramientas que necesito y avanzo por etapas, con criterio y apoyo de IA cuando aporta valor.',
-    impact: 'En mi proyecto actual contribuí a reducir los tiempos de regresión y ampliar la cobertura de pruebas. Por confidencialidad, no publico métricas ni detalles internos.',
-    experienceLink: 'Ver experiencia completa', profileNote: 'Me interesa cómo las buenas decisiones técnicas se convierten en productos fiables.', noteLabel: 'MI FORMA DE TRABAJAR',
-    approach: [
-      { title: 'Entender antes de construir', body: 'Investigo el problema, el contexto y las opciones antes de elegir un camino técnico.' },
-      { title: 'Calidad desde el diseño', body: 'Conecto riesgos, criterios de aceptación y pruebas desde las primeras decisiones.' },
-      { title: 'IA con criterio humano', body: 'Uso Claude y Codex para explorar y desarrollar. Contrasto sus propuestas y valido las decisiones.' },
-    ],
-    projectsTitle: <>Ideas, criterio<br />y construcción.</>, projectsAside: 'En mis proyectos personales, la IA genera el código. Yo defino el objetivo, investigo opciones, dirijo las iteraciones y reviso los resultados.',
-    myPulseCaption: 'PRODUCTO EN DESARROLLO',
+    language: 'Idioma', skip: 'Saltar al contenido', navLabel: 'Navegación principal', menu: 'Menú', close: 'Cerrar', themeToDark: 'Activar modo oscuro', themeToLight: 'Activar modo claro',
+    metaTitle: 'Carlos Gosálbez — QA, automatización y notas de ingeniería',
+    metaDescription: 'Cuaderno técnico sobre QA, automatización y proyectos personales: alcance, stack, aportación y estado real.',
+    nav: ['Build log', 'Loop de QA', 'QA timeline', 'Notas', 'Hablemos'], availability: 'NOTAS TÉCNICAS PÚBLICAS · CÓDIGO PRIVADO',
+    location: 'ALICANTE, ESPAÑA', title: 'QA · AUTOMATIZACIÓN · SISTEMAS CON IA',
+    heroTitle: <>El happy path<br /><em>no es un plan</em><br />de pruebas</>,
+    intro: 'Trabajo en QA y automatización, y dirijo proyectos propios construidos con IA. Este cuaderno recoge el alcance, el stack, mi papel y qué está realmente hecho en cada build.',
+    explore: 'Abrir el build log', journey: 'Ver mi loop de QA', heroFootLeft: 'MODO DEBUG: ACTIVADO', heroFootRight: 'BAJA PARA LEER EL LOG',
+    stripTop: <>DEL RPA A LA CALIDAD<br />QUE <span>NO SE QUEDA EN VERDE.</span></>, stripBottom: 'TEST · TRACE · ITERATE',
+    sections: ['BUILD LOG', 'LOOP DE QA', 'WORK LOG', 'TOOLCHAIN', 'NOTAS DE CAMPO', 'BACKGROUND'],
+    artLabel: 'Loop de trabajo de QA: entender el sistema, priorizar riesgo, probar y revisar resultados',
+    projectsTitle: <>Qué existe.<br /><em>Qué falta.</em></>,
+    projectsAside: 'Cada build resume alcance, stack, autoría y estado. Enlazo los productos que se pueden visitar; los repositorios de código siguen privados.',
+    projectScope: 'SCOPE', projectBuild: 'BUILD NOTES', projectRole: 'MI PAPEL', stackLabel: 'STACK', myPulseCaption: 'IMPLEMENTADO / EN CURSO',
     projects: [
-      { name: 'Kickoff', category: 'PRODUCTO MÓVIL · DEPORTE', headline: 'La organización deportiva, más sencilla.', description: 'Una aplicación móvil para organizar grupos y partidos: jugadores, equipos, marcadores, estadísticas y cuentas compartidas en un mismo lugar.', contribution: 'Partí de la idea e investigué las opciones para dirigir su evolución. La IA generó el código; yo definí el rumbo del producto y sus iteraciones.', status: 'Lanzamiento en preparación', linkLabel: 'Visitar la web oficial' },
-      { name: 'Memento-F-tbol', category: 'PROYECTO PERSONAL · COMPLETADO', headline: 'Un proyecto personal llevado a término.', description: 'Herramienta privada de análisis probabilístico de fútbol, concebida y completada como proyecto personal.', contribution: 'Definí el objetivo y dirigí sus decisiones con investigación propia y apoyo de IA. El código fue generado con IA; revisé las propuestas y orienté sus iteraciones.', status: 'Completado · código privado' },
-      { name: 'My Pulse', category: 'PRODUCTO DIGITAL · EN DESARROLLO', headline: 'Una app, dos repositorios especializados.', description: 'My Pulse se organiza en dos repositorios independientes: my-pulse-backend (backend, base de datos e IA implementados) y my-pulse-web (interfaz web en construcción).', contribution: 'LangGraph estructura los flujos de IA en el backend. Dirijo el producto y sus iteraciones con investigación propia y apoyo de IA; el código se genera con IA.', status: 'Backend implementado · web en construcción' },
-      { name: 'financial-ai', category: 'EXPERIMENTO PERSONAL · EN CURSO', headline: 'Explorar sistemas de análisis con trazabilidad.', description: 'Experimento personal en curso para estructurar pipelines reproducibles de datos y análisis financieros.', contribution: 'Parto de una pregunta de producto, investigo alternativas y dirijo la evolución con apoyo de IA. El código de este proyecto privado lo genera la IA.', status: 'En curso · privado' },
+      {
+        name: 'Kickoff', category: 'APP MÓVIL · REPOSITORIO PRIVADO', headline: 'Organizar el partido sin organizar un grupo de chats.',
+        description: 'Una app para coordinar grupos, jugadores, equipos, partidos, resultados, estadísticas y cuentas compartidas.',
+        buildNotes: 'Expo, React Native y TypeScript, junto con Supabase y RevenueCat. La ficha no intenta adivinar ni publicar el detalle interno de sus integraciones.',
+        contribution: 'Partí de la idea, defino el rumbo del producto y dirijo las iteraciones. La IA genera el código; yo reviso los cambios y decido qué sigue.',
+        status: 'Preparando lanzamiento', access: 'Código fuente: privado.', linkLabel: 'Web del producto',
+      },
+      {
+        name: 'Memento-F-tbol', category: 'PROYECTO PERSONAL · REPOSITORIO PRIVADO', headline: 'Un experimento de análisis llevado a término.',
+        description: 'Herramienta privada de análisis probabilístico de fútbol. Proyecto personal completado.',
+        buildNotes: 'No hay código ni una ficha técnica pública; no atribuyo tecnologías que no estén publicadas.',
+        contribution: 'Definí el objetivo, investigué opciones y orienté las iteraciones. La IA generó el código; revisé sus propuestas.',
+        status: 'Completado', access: 'Código fuente: privado.',
+      },
+      {
+        name: 'My Pulse', category: 'PRODUCTO DIGITAL · DOS REPOS PRIVADOS', headline: 'Un backend implementado y una web todavía en construcción.',
+        description: 'Una app dividida en my-pulse-backend y my-pulse-web. El backend, la base de datos y la IA están implementados; la interfaz web sigue en curso.',
+        buildNotes: 'Python, FastAPI, Supabase y LangGraph. LangGraph organiza los flujos de IA del backend.',
+        contribution: 'Dirijo el producto y sus iteraciones. La IA genera el código; yo investigo, marco objetivos y reviso lo que produce.',
+        status: 'Backend implementado · web en curso', access: 'Código fuente: privado.',
+      },
+      {
+        name: 'financial-ai', category: 'EXPERIMENTO PERSONAL · REPOSITORIO PRIVADO', headline: 'Primero, que el análisis se pueda repetir.',
+        description: 'Experimento en curso para estructurar pipelines reproducibles de datos y análisis financieros.',
+        buildNotes: 'Aún no publico código ni benchmarks; el estado visible aquí es exploratorio.',
+        contribution: 'Investigo alternativas y dirijo las iteraciones. La IA genera el código de este proyecto privado.',
+        status: 'En exploración', access: 'Código fuente: privado.',
+      },
     ],
-    experienceTitle: <>Una trayectoria<br />subiendo de nivel.</>, experienceAside: 'De RPA y testing a integrar la calidad desde la arquitectura.', current: 'Actual', expand: 'Mostrar detalles', collapse: 'Ocultar detalles',
-    sectorEyebrow: 'SECTORES', sectorIntro: 'He aportado en iniciativas de QA y calidad en los sectores de salud, transporte, comercio y banca.', sectors: ['Salud', 'Transporte', 'Comercio', 'Banca'],
+    loopTitle: <>Cómo pienso una prueba<br /><em>antes de automatizarla.</em></>,
+    loopIntro: 'No todo merece un test end-to-end. Este es el mapa de trabajo que aparece en mi experiencia: riesgos y auditorías, checks automatizados y manuales, y una revisión humana cuando entra IA.',
+    loopCards: [
+      { label: '01 / CONTEXTO', title: 'Entender el sistema', body: 'Trabajo en proyectos de arquitectura y desarrollo; empiezo por el contexto, los riesgos y los criterios que condicionan la prueba.' },
+      { label: '02 / SEÑAL', title: 'Elegir el check', body: 'Selenium y XRAY para automatización; Silk Central para gestionar testing manual. La herramienta depende de lo que haya que observar.' },
+      { label: '03 / ASISTENCIA', title: 'IA dentro del loop', body: 'Diseñé agentes con GPT y Copilot para apoyar auditorías y análisis de pruebas en Jira/Xray. La propuesta de IA necesita revisión.' },
+      { label: '04 / TRANSPARENCIA', title: 'Separar estado y deseo', body: 'En cada proyecto indico qué está implementado, qué sigue en curso, qué código genera la IA y qué repositorios son privados.' },
+    ],
+    experienceTitle: <>QA donde los supuestos<br /><em>se encuentran con el sistema.</em></>,
+    experienceAside: 'Una traza compacta de los sistemas y herramientas con los que he trabajado. Abre cada entrada para ver el detalle.',
+    current: 'Actual', expand: 'Ver nota', collapse: 'Cerrar nota',
     experience: [
-      { role: 'QA Analyst · Arquitectura y Calidad (Lead)', detail: 'Lidero auditorías de calidad y gestión de riesgos en proyectos de arquitectura y desarrollo. Automatizo con XRAY y Selenium y gestiono pruebas manuales con Silk Central.' },
-      { role: 'QA Analyst · Arquitectura y Calidad', detail: 'Aseguramiento de calidad en proyectos de arquitectura y desarrollo. Diseñé y configuré agentes de IA con GPT y Copilot para apoyar auditorías y el análisis de pruebas en Jira/Xray.' },
-      { role: 'QA Analyst · Test Automation Engineer', detail: 'Frameworks de automatización web y escritorio con Katalon Studio. Trabajo con Java, Groovy y Python en equipos Agile/Scrum.' },
-      { role: 'Desarrollador RPA', detail: 'Automatización de procesos mediante BluePrism y UiPath.' },
-      { role: 'Desarrollador RPA · Automatización y testing', detail: 'Automatización y testing con Selenium, Java y Python. Colaboración con equipos multiculturales.' },
+      { role: 'QA Analyst · Arquitectura y Calidad (Lead)', detail: 'Auditorías de calidad y gestión de riesgos en proyectos de arquitectura y desarrollo. Automatización con XRAY y Selenium; pruebas manuales gestionadas con Silk Central.' },
+      { role: 'QA Analyst · Arquitectura y Calidad', detail: 'Aseguramiento de calidad en proyectos de arquitectura y desarrollo. Diseñé y configuré agentes de IA con GPT y Copilot para apoyar auditorías y análisis de pruebas en Jira/Xray.' },
+      { role: 'QA Analyst · Test Automation Engineer', detail: 'Frameworks de automatización web y de escritorio con Katalon Studio. Java, Groovy y Python en equipos Agile/Scrum.' },
+      { role: 'Desarrollador RPA', detail: 'Automatización de procesos con BluePrism y UiPath.' },
+      { role: 'Desarrollador RPA · Automatización y testing', detail: 'Automatización y testing con Selenium, Java y Python; colaboración con equipos multiculturales.' },
     ],
     experiencePeriods: ['ENE 2026 — ACTUALIDAD', 'AGO 2024 — DIC 2025', 'MAR 2021 — JUL 2024', 'NOV 2019 — FEB 2021', 'SEP 2018 — OCT 2019'],
     companies: ['Accenture España', 'Accenture España', 'Accenture España', 'Accenture España', 'Everis España · NTT DATA'],
-    skillsTitle: <>Mi inventario<br />de habilidades.</>, skillsIntro: 'Herramientas y tecnologías presentes en mi experiencia profesional y proyectos personales. En mis proyectos propios, la IA genera el código bajo mi dirección.',
-    skillGroups: ['Automatización', 'Calidad y gestión', 'Tecnologías', 'RPA e IA'],
-    careerTitle: <>Lo que ya tengo<br /><em>desbloqueado.</em></>, careerIntro: 'Mi build principal es QA y automatización. Esa experiencia también encaja en análisis funcional y calidad de productos con IA; la construcción de producto es una rama que sigo subiendo con proyectos propios.',
-    careerCards: [
-      { level: 'NIVEL ACTUAL', title: 'QA & Quality Engineering', roles: 'QA Analyst · QA Lead · Test Automation · Product Quality', body: 'Calidad, automatización, análisis de riesgos y pruebas integradas en el ciclo de desarrollo.' },
-      { level: 'HABILIDAD TRANSFERIBLE', title: 'Análisis funcional y de producto', roles: 'Business Analyst · Functional Analyst · Product Analyst · UAT', body: 'Conectar necesidades, reglas de negocio, criterios de aceptación y validación con los equipos de producto y tecnología.' },
-      { level: 'RAMA EN PROGRESO', title: 'Calidad y operaciones de IA', roles: 'AI Quality · LLM Evaluation · AI Product Operations', body: 'Ayudar a evaluar experiencias con IA, estructurar criterios de calidad y convertir hallazgos en mejoras. Área en crecimiento, respaldada por proyectos personales.' },
-      { level: 'RAMA EN PROGRESO', title: 'Construcción de producto con IA', roles: 'AI Product Builder · Product Owner técnico (junior/associate)', body: 'Una dirección de crecimiento basada en idear, investigar y guiar productos asistidos por IA; no es todavía mi experiencia laboral principal.' },
+    skillsTitle: <>Toolchain<br />sin tier list.</>,
+    skillsIntro: 'Herramientas que aparecen en la experiencia profesional y en los proyectos. Verlas aquí no significa que todas tengan el mismo contexto ni profundidad.',
+    skillGroups: ['Automatización', 'Calidad y gestión', 'Lenguajes', 'RPA e IA'],
+    profileTitle: <>Las notas tienen<br /><em>límites.</em></>,
+    story: 'Empecé en automatización RPA y evolucioné hacia QA y automatización de pruebas. Hoy trabajo entre auditorías de calidad, riesgos, arquitectura y desarrollo; fuera del trabajo dirijo proyectos propios con asistencia de IA.',
+    impact: 'En el proyecto actual contribuí a reducir los tiempos de regresión y ampliar la cobertura de pruebas. No publico métricas internas. Los proyectos personales de este log tienen repositorios privados, así que describo su alcance y autoría sin presentarlos como código abierto.',
+    projectsLink: 'Volver al build log', profileNote: 'La IA puede escribir líneas. Las decisiones y la revisión siguen teniendo dueño.', noteLabel: 'REGLA LOCAL',
+    approach: [
+      { title: 'Riesgo antes que volumen', body: 'Conectar contexto, criterios y riesgo antes de contar pruebas como si todas aportaran lo mismo.' },
+      { title: 'La herramienta no es el resultado', body: 'Un framework ayuda a repetir checks; no demuestra por sí solo que el sistema sea fiable.' },
+      { title: 'Asistencia no es autoría', body: 'En mis proyectos personales la IA genera código bajo mi dirección. Lo digo explícitamente y reviso sus resultados.' },
     ],
-    educationTitle: <>Banco de trabajo<br /><em>y lore.</em></>, education: [
+    educationTitle: <>Background <em>// formación</em></>,
+    education: [
       { title: 'Grado Superior en Desarrollo de Aplicaciones Web', detail: 'IES Mare Nostrum · Alicante · 2016—2018' },
       { title: 'Formación oficial de Anthropic sobre IA', detail: 'En curso' },
-    ], languagesTitle: 'Idiomas', languageLevels: ['Español: Nativo', 'Inglés: Básico · en mejora activa'],
-    hireEyebrow: 'MISIÓN SECUNDARIA: CONOCERNOS', hireTitle: <>¿Montamos<br /><em>un buen equipo?</em></>, hireHint: 'Spoiler: la conversación desbloquea más que cualquier botón.',
-    yes: 'Sí, hablemos', no: 'No', yesAlso: 'Sí también', noLabel: 'No, todavía no', noYesLabel: 'Sí, también quiero hablar contigo',
-    noMessages: ['¿Seguro? Prueba otra vez.', 'Ese botón parece tener iniciativa propia.', 'Te lo estás poniendo interesante.', 'La curiosidad también cuenta.', 'Ya casi encontramos un sí.', 'Una última oportunidad para ese botón.', 'Parece que tiene un plan distinto.', 'Está resistiendo con bastante convicción.', 'Trato hecho: ahora también es un sí.'],
-    profileBubbleEyebrow: 'CONTACTO DIRECTO', profileBubbleTitle: 'Hablemos de la oportunidad.', profileBubbleCopy: 'Si estás valorando mi perfil para un puesto de QA, automatización o calidad de producto, estaré encantado de conocer el reto y conversar sobre cómo puedo aportar. Puedes escribirme directamente por el canal que prefieras.', optionalForm: 'Contarme sobre el puesto (opcional)', optionalFormLabel: 'SI QUIERES, CUÉNTAME MÁS', formOptionalHint: 'Este formulario es opcional. También puedes contactarme directamente con los datos de arriba.', backToContact: 'Volver a mis datos', formIntro: 'Cuéntame un poco sobre la oportunidad.', name: 'Tu nombre', email: 'Tu email', company: 'Empresa', role: 'Puesto', description: 'Descripción y requisitos',
-    namePlaceholder: 'Nombre y apellidos', emailPlaceholder: 'nombre@empresa.com', companyPlaceholder: 'Nombre de la empresa', rolePlaceholder: 'Puesto que queréis cubrir', descriptionPlaceholder: 'Contexto del puesto, responsabilidades y requisitos…',
-    formPrivacy: 'Los datos permanecen en tu navegador mientras preparas el borrador. No se guardan ni se envían desde esta web; podrás revisar el correo antes de enviarlo.', submit: 'Preparar correo',
-    thankYou: 'BORRADOR LISTO', thankYouTitle: 'Revisa y envía el correo cuando quieras.', reply: 'Abre tu aplicación de correo y pulsa enviar cuando el mensaje esté listo.', emailSubject: 'Hablemos de una oportunidad', emailLabel: 'Email', linkedinLabel: 'LinkedIn',
-    contactFooter: 'GG · CALIDAD · AUTOMATIZACIÓN · PRODUCTO',
-    artLabel: 'Mapa de misiones de un sistema de calidad con etapas de arquitectura, automatización y entrega', match: 'PARTIDO · 08:30', balanced: 'Equipo equilibrado', idea: 'IDEA', agent: 'AGENTE', flow: 'FLUJO', result: 'RESULTADO', human: 'DECISIÓN HUMANA', loop: 'EN EL PROCESO',
+    ],
+    languagesTitle: 'Idiomas', languageLevels: ['Español: nativo', 'Inglés: básico · en mejora activa'],
+    contactEyebrow: 'FIN DEL LOG · CANAL ABIERTO',
+    contactTitle: <>¿Ves un borde<br /><em>que no he probado?</em></>,
+    contactIntro: 'Si quieres hablar de testing, automatización, herramientas o de una decisión que aparece aquí, escríbeme. También acepto feedback técnico y bugs de esta web.',
+    emailSubject: 'Nota técnica desde el portfolio', emailLabel: 'EMAIL', linkedinLabel: 'LINKEDIN', contactFooter: 'QA · DEBUG · ITERATE',
+    idea: 'RIESGO', agent: 'TEST', flow: 'SEÑAL', result: 'REVISIÓN', human: 'REVISIÓN HUMANA', loop: 'EN EL LOOP',
   },
   en: {
-    language: 'Language', skip: 'Skip to content', navLabel: 'Main navigation', menu: 'Menu', close: 'Close', themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode', metaTitle: 'Carlos Gosálbez — QA, bug hunter and AI products', metaDescription: 'QA and automation in Alicante, Spain, with a product perspective, a radar for bugs and personal projects built with AI. Open to new professional quests.',
-    nav: ['Quest log', 'Where I fit', 'Projects', 'Character sheet', 'Let’s talk'], availability: 'Open to new quests · remote and hybrid',
-    location: 'ALICANTE, SPAIN', title: 'QA · BUG HUNTER · AI PRODUCTS', heroTitle: <>Quality that<br /><em>moves</em> ideas<br />forward</>,
-    intro: 'I bring QA and automation experience, a product perspective, and hands-on experience guiding personal products built with AI.',
-    explore: 'View experience', journey: 'View projects', heroFootLeft: 'CURIOSITY MODE: ON', heroFootRight: 'SCROLL TO EXPLORE',
-    stripTop: <>FROM AUTOMATING PROCESSES<br />TO <span>HUNTING BUGS WITH PURPOSE.</span></>, stripBottom: 'QA × AUTOMATION × PRODUCT',
-    sections: ['QUEST LOG', 'SKILL INVENTORY', 'NEXT LEVEL', 'PROJECTS ON RADAR', 'CHARACTER SHEET', 'WORKSHOP & LORE'],
-    profileTitle: <>Quality starts<br />long before testing.</>, story: 'My career began in RPA automation and grew into quality assurance and test automation. Alongside my QA work, I take personal projects from idea to implementation: I research, learn the tools I need and build in stages, applying my judgement and using AI where it adds value.',
-    impact: 'In my current project, I contributed to reducing regression times and expanding test coverage. For confidentiality reasons, I do not share metrics or internal details.',
-    experienceLink: 'View full experience', profileNote: 'I care about how sound technical decisions become reliable products.', noteLabel: 'HOW I WORK',
-    approach: [
-      { title: 'Understand before building', body: 'I research the problem, context and options before choosing a technical direction.' },
-      { title: 'Quality by design', body: 'I connect risks, acceptance criteria and testing from the earliest decisions.' },
-      { title: 'AI guided by human judgement', body: 'I use Claude and Codex to explore and build. I challenge their suggestions and validate decisions.' },
-    ],
-    projectsTitle: <>Ideas, judgement<br />and execution.</>, projectsAside: 'Across my personal projects, AI generates the code. I define the goal, research options, guide iterations and review the outcomes.',
-    myPulseCaption: 'PRODUCT IN DEVELOPMENT',
+    language: 'Language', skip: 'Skip to content', navLabel: 'Main navigation', menu: 'Menu', close: 'Close', themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode',
+    metaTitle: 'Carlos Gosálbez — QA, automation and engineering notes',
+    metaDescription: 'Engineering notes on QA, automation and personal projects: scope, stack, contribution and honest status.',
+    nav: ['Build log', 'QA loop', 'QA timeline', 'Notes', 'Say hello'], availability: 'PUBLIC ENGINEERING NOTES · PRIVATE CODE',
+    location: 'ALICANTE, SPAIN', title: 'QA · AUTOMATION · AI SYSTEMS',
+    heroTitle: <>The happy path<br /><em>is not a test</em><br />plan</>,
+    intro: 'I work in QA and automation, and guide personal projects built with AI. This log captures each build’s scope, stack, my part and what is actually implemented.',
+    explore: 'Open the build log', journey: 'See my QA loop', heroFootLeft: 'DEBUG MODE: ON', heroFootRight: 'SCROLL TO READ THE LOG',
+    stripTop: <>FROM RPA TO QUALITY<br />THAT <span>DOES NOT STOP AT GREEN.</span></>, stripBottom: 'TEST · TRACE · ITERATE',
+    sections: ['BUILD LOG', 'QA LOOP', 'WORK LOG', 'TOOLCHAIN', 'FIELD NOTES', 'BACKGROUND'],
+    artLabel: 'QA work loop: understand the system, prioritize risk, test and review results',
+    projectsTitle: <>What exists.<br /><em>What is next.</em></>,
+    projectsAside: 'Each build summarises scope, stack, code authorship and status. I link products you can visit; the code repositories remain private.',
+    projectScope: 'SCOPE', projectBuild: 'BUILD NOTES', projectRole: 'MY PART', stackLabel: 'STACK', myPulseCaption: 'IMPLEMENTED / IN PROGRESS',
     projects: [
-      { name: 'Kickoff', category: 'MOBILE PRODUCT · SPORTS', headline: 'Making sports organisation simpler.', description: 'A mobile app for organising groups and matches: players, teams, scoreboards, stats and shared accounts in one place.', contribution: 'I started with the idea and researched options to guide its evolution. AI generated the code; I set the product direction and guided its iterations.', status: 'Preparing for launch', linkLabel: 'Visit the official website' },
-      { name: 'Memento-F-tbol', category: 'PERSONAL PROJECT · COMPLETED', headline: 'A personal project taken through to completion.', description: 'A private football probability analysis tool, conceived and completed as a personal project.', contribution: 'I defined the goal and guided project decisions through my own research and AI assistance. AI generated the code; I reviewed proposals and guided iterations.', status: 'Completed · private code' },
-      { name: 'My Pulse', category: 'DIGITAL PRODUCT · IN DEVELOPMENT', headline: 'One app, two specialised repositories.', description: 'My Pulse is organised into two independent repositories: my-pulse-backend (backend, database and AI implemented) and my-pulse-web (web interface in progress).', contribution: 'LangGraph structures AI flows in the backend. I guide the product and its iterations through my own research and AI assistance; AI generates the code.', status: 'Backend implemented · website in progress' },
-      { name: 'financial-ai', category: 'PERSONAL EXPERIMENT · IN PROGRESS', headline: 'Exploring traceable analytical systems.', description: 'An ongoing personal experiment in structuring reproducible financial data and analysis pipelines.', contribution: 'I start from a product question, research options and guide its evolution with AI assistance. AI generates the code for this private project.', status: 'In progress · private' },
+      {
+        name: 'Kickoff', category: 'MOBILE APP · PRIVATE REPOSITORY', headline: 'Organise the match without organising another group chat.',
+        description: 'An app for coordinating groups, players, teams, matches, results, stats and shared accounts.',
+        buildNotes: 'Expo, React Native and TypeScript, with Supabase and RevenueCat. This page does not guess at or publish internal integration details.',
+        contribution: 'I started with the idea, define the product direction and guide iterations. AI generates the code; I review changes and decide what comes next.',
+        status: 'Preparing for launch', access: 'Source code: private.', linkLabel: 'Product website',
+      },
+      {
+        name: 'Memento-F-tbol', category: 'PERSONAL PROJECT · PRIVATE REPOSITORY', headline: 'An analysis experiment carried through to completion.',
+        description: 'A private football probability analysis tool. Personal project completed.',
+        buildNotes: 'No public code or technical sheet is available; I do not claim technologies that have not been published.',
+        contribution: 'I defined the goal, researched options and guided iterations. AI generated the code; I reviewed its suggestions.',
+        status: 'Completed', access: 'Source code: private.',
+      },
+      {
+        name: 'My Pulse', category: 'DIGITAL PRODUCT · TWO PRIVATE REPOS', headline: 'An implemented backend and a web app still in progress.',
+        description: 'One app split into my-pulse-backend and my-pulse-web. The backend, database and AI are implemented; the web interface is still underway.',
+        buildNotes: 'Python, FastAPI, Supabase and LangGraph. LangGraph structures the backend AI flows.',
+        contribution: 'I guide the product and its iterations. AI generates the code; I research, set goals and review what it produces.',
+        status: 'Backend implemented · web in progress', access: 'Source code: private.',
+      },
+      {
+        name: 'financial-ai', category: 'PERSONAL EXPERIMENT · PRIVATE REPOSITORY', headline: 'Make the analysis repeatable first.',
+        description: 'An ongoing experiment in structuring reproducible data and financial analysis pipelines.',
+        buildNotes: 'No code or benchmarks are public yet; the status here is exploratory.',
+        contribution: 'I research options and guide iterations. AI generates the code for this private project.',
+        status: 'Exploratory', access: 'Source code: private.',
+      },
     ],
-    experienceTitle: <>A career<br />levelling up.</>, experienceAside: 'From RPA and testing to quality built into the architecture stage.', current: 'Current', expand: 'Show details', collapse: 'Hide details',
-    sectorEyebrow: 'INDUSTRIES', sectorIntro: 'I have contributed to QA and quality initiatives across healthcare, transport, retail and banking.', sectors: ['Healthcare', 'Transport', 'Retail', 'Banking'],
+    loopTitle: <>How I think about a test<br /><em>before automating it.</em></>,
+    loopIntro: 'Not everything deserves an end-to-end test. This is the work map reflected in my experience: risks and audits, automated and manual checks, and human review when AI is involved.',
+    loopCards: [
+      { label: '01 / CONTEXT', title: 'Understand the system', body: 'I work on architecture and development projects; start with context, risks and the criteria that shape a test.' },
+      { label: '02 / SIGNAL', title: 'Choose the check', body: 'Selenium and XRAY for automation; Silk Central for managing manual testing. The tool depends on what needs observing.' },
+      { label: '03 / ASSISTANCE', title: 'Keep AI in the loop', body: 'I designed GPT and Copilot agents to support audits and test analysis in Jira/Xray. AI output still needs review.' },
+      { label: '04 / TRANSPARENCY', title: 'Separate status from intent', body: 'Each project states what is implemented, what is ongoing, who generates the code and whether its repository is private.' },
+    ],
+    experienceTitle: <>QA where assumptions<br /><em>meet the system.</em></>,
+    experienceAside: 'A compact trace of systems and tools I have worked with. Open an entry for the details.',
+    current: 'Current', expand: 'Read note', collapse: 'Close note',
     experience: [
-      { role: 'QA Analyst · Architecture & Quality (Lead)', detail: 'I lead quality audits and risk management for architecture and development projects. I automate with XRAY and Selenium and manage manual testing with Silk Central.' },
+      { role: 'QA Analyst · Architecture & Quality (Lead)', detail: 'Quality audits and risk management for architecture and development projects. Automation with XRAY and Selenium; manual testing managed with Silk Central.' },
       { role: 'QA Analyst · Architecture & Quality', detail: 'Quality assurance for architecture and development projects. I designed and configured AI agents with GPT and Copilot to support audits and test analysis in Jira/Xray.' },
-      { role: 'QA Analyst · Test Automation Engineer', detail: 'Web and desktop automation frameworks using Katalon Studio. I work with Java, Groovy and Python in Agile/Scrum teams.' },
-      { role: 'RPA Developer', detail: 'Process automation using BluePrism and UiPath.' },
-      { role: 'RPA Developer · Automation & Testing', detail: 'Automation and testing with Selenium, Java and Python. Collaboration with multicultural teams.' },
+      { role: 'QA Analyst · Test Automation Engineer', detail: 'Web and desktop automation frameworks with Katalon Studio. Java, Groovy and Python in Agile/Scrum teams.' },
+      { role: 'RPA Developer', detail: 'Process automation with BluePrism and UiPath.' },
+      { role: 'RPA Developer · Automation & Testing', detail: 'Automation and testing with Selenium, Java and Python; collaboration with multicultural teams.' },
     ],
     experiencePeriods: ['JAN 2026 — PRESENT', 'AUG 2024 — DEC 2025', 'MAR 2021 — JUL 2024', 'NOV 2019 — FEB 2021', 'SEP 2018 — OCT 2019'],
     companies: ['Accenture Spain', 'Accenture Spain', 'Accenture Spain', 'Accenture Spain', 'Everis Spain · NTT DATA'],
-    skillsTitle: <>My inventory<br />of skills.</>, skillsIntro: 'Tools and technologies from my professional experience and personal projects. For my own projects, AI generates the code under my direction.',
-    skillGroups: ['Automation', 'Quality & delivery', 'Technologies', 'RPA & AI'],
-    careerTitle: <>What I’ve already<br /><em>unlocked.</em></>, careerIntro: 'My main build is QA and automation. That experience also carries over to business analysis and AI product quality; product building is a skill tree I’m levelling up through personal projects.',
-    careerCards: [
-      { level: 'CURRENT LEVEL', title: 'QA & Quality Engineering', roles: 'QA Analyst · QA Lead · Test Automation · Product Quality', body: 'Quality, automation, risk analysis and testing across the development lifecycle.' },
-      { level: 'TRANSFERABLE SKILL', title: 'Business and product analysis', roles: 'Business Analyst · Functional Analyst · Product Analyst · UAT', body: 'Connecting needs, business rules, acceptance criteria and validation across product and technology teams.' },
-      { level: 'SKILL TREE: IN PROGRESS', title: 'AI quality and operations', roles: 'AI Quality · LLM Evaluation · AI Product Operations', body: 'Evaluating AI experiences, shaping quality criteria and turning findings into improvements. A growing area supported by my personal projects.' },
-      { level: 'SKILL TREE: IN PROGRESS', title: 'AI-assisted product building', roles: 'AI Product Builder · Associate / Junior Technical Product Owner', body: 'A direction built around conceiving, researching and guiding AI-assisted products; it is not yet my primary professional experience.' },
+    skillsTitle: <>Toolchain<br />without a tier list.</>,
+    skillsIntro: 'Tools that show up in my professional work and projects. Seeing a tool here does not mean every tool has the same context or depth.',
+    skillGroups: ['Automation', 'Quality & delivery', 'Languages', 'RPA & AI'],
+    profileTitle: <>These notes have<br /><em>limits.</em></>,
+    story: 'I started in RPA automation and moved into QA and test automation. Today I work across quality audits, risk, architecture and development; outside work I guide personal projects with AI assistance.',
+    impact: 'In my current project, I contributed to reducing regression time and expanding test coverage. Internal metrics stay private. The personal projects in this log have private repositories, so I describe their scope and authorship without presenting them as open source.',
+    projectsLink: 'Back to the build log', profileNote: 'AI can write lines. Decisions and review still have an owner.', noteLabel: 'LOCAL RULE',
+    approach: [
+      { title: 'Risk before volume', body: 'Connect context, criteria and risk before counting tests as if they all add equal value.' },
+      { title: 'The tool is not the outcome', body: 'A framework helps repeat checks; it does not prove a system is reliable by itself.' },
+      { title: 'Assistance is not authorship', body: 'AI generates code in my personal projects under my direction. I say so and review the output.' },
     ],
-    educationTitle: <>Workshop<br /><em>& lore.</em></>, education: [
+    educationTitle: <>Background <em>// learning</em></>,
+    education: [
       { title: 'Higher Technician Diploma in Web Application Development', detail: 'IES Mare Nostrum · Alicante · 2016—2018' },
       { title: 'Anthropic official AI training', detail: 'In progress' },
-    ], languagesTitle: 'Languages', languageLevels: ['Spanish: Native', 'English: Basic · actively improving'],
-    hireEyebrow: 'SIDE QUEST: LET’S MEET', hireTitle: <>Shall we build<br /><em>a good team?</em></>, hireHint: 'Spoiler: a conversation unlocks more than any button.',
-    yes: 'Yes, let’s talk', no: 'No', yesAlso: 'Yes, too', noLabel: 'No, not yet', noYesLabel: 'Yes, I would like to talk too',
-    noMessages: ['Still thinking it over?', 'That button has a mind of its own.', 'You’re making this interesting.', 'Curiosity counts, too.', 'We’re getting closer to a yes.', 'One last chance for that button.', 'It seems to have another plan.', 'It’s holding its ground.', 'Deal: that is a yes now, too.'],
-    profileBubbleEyebrow: 'DIRECT CONTACT', profileBubbleTitle: 'Let’s talk about the opportunity.', profileBubbleCopy: 'If you’re considering my profile for a QA, test automation or product quality role, I’d be glad to learn about the challenge and discuss how I could contribute. Reach me directly through the channel that works best for you.', optionalForm: 'Tell me about the role (optional)', optionalFormLabel: 'IF YOU WOULD LIKE, TELL ME MORE', formOptionalHint: 'This form is optional. You can also contact me directly using the details above.', backToContact: 'Back to my contact details', formIntro: 'Tell me a little about the opportunity.', name: 'Your name', email: 'Your email', company: 'Company', role: 'Role', description: 'Description and requirements',
-    namePlaceholder: 'Full name', emailPlaceholder: 'name@company.com', companyPlaceholder: 'Company name', rolePlaceholder: 'Role you are hiring for', descriptionPlaceholder: 'Role context, responsibilities and requirements…',
-    formPrivacy: 'Your details stay in your browser while you prepare the draft. This site does not store or send them; you can review the email before sending.', submit: 'Prepare email',
-    thankYou: 'DRAFT READY', thankYouTitle: 'Review and send the email when you are ready.', reply: 'Open your email app and press send once everything looks right.', emailSubject: 'Let’s discuss an opportunity', emailLabel: 'Email', linkedinLabel: 'LinkedIn',
-    contactFooter: 'GG · QUALITY · AUTOMATION · PRODUCT',
-    artLabel: 'Quest map for a quality system with architecture, automation and delivery stages', match: 'MATCH · 08:30', balanced: 'Balanced teams', idea: 'IDEA', agent: 'AGENT', flow: 'FLOW', result: 'RESULT', human: 'HUMAN DECISION', loop: 'IN THE LOOP',
+    ],
+    languagesTitle: 'Languages', languageLevels: ['Spanish: native', 'English: basic · actively improving'],
+    contactEyebrow: 'END OF LOG · CHANNEL OPEN',
+    contactTitle: <>See an edge case<br /><em>I have not tested?</em></>,
+    contactIntro: 'Want to talk testing, automation, tools or a decision noted here? Get in touch. Technical feedback and bugs in this site are welcome too.',
+    emailSubject: 'Technical note from portfolio', emailLabel: 'EMAIL', linkedinLabel: 'LINKEDIN', contactFooter: 'QA · DEBUG · ITERATE',
+    idea: 'RISK', agent: 'TEST', flow: 'SIGNAL', result: 'REVIEW', human: 'HUMAN REVIEW', loop: 'IN THE LOOP',
   },
-} as const
+}
 
-export type Language = keyof typeof translations
-export type Translation = (typeof translations)[Language]
-export { translations }
+export const translations = copy
