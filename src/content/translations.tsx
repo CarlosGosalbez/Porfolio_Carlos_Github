@@ -141,7 +141,7 @@ const copy: Record<Language, Copy> = {
       { label: '04 / TRANSPARENCIA', title: 'Separar estado y deseo', body: 'En cada proyecto indico qué está implementado, qué sigue en curso, qué código genera la IA y qué repositorios son privados.' },
     ],
     experienceTitle: <>QA donde los supuestos<br /><em>se encuentran con el sistema.</em></>,
-    experienceAside: 'Una traza compacta de los sistemas y herramientas con los que he trabajado. Abre cada entrada para ver el detalle.',
+    experienceAside: 'Una cronología breve de funciones y herramientas en proyectos de arquitectura, calidad, automatización y RPA.',
     current: 'Actual', expand: 'Ver nota', collapse: 'Cerrar nota',
     experience: [
       { role: 'QA Analyst · Arquitectura y Calidad (Lead)', detail: 'Auditorías de calidad y gestión de riesgos en proyectos de arquitectura y desarrollo. Automatización con XRAY y Selenium; pruebas manuales gestionadas con Silk Central.' },
@@ -230,7 +230,7 @@ const copy: Record<Language, Copy> = {
       { label: '04 / TRANSPARENCY', title: 'Separate status from intent', body: 'Each project states what is implemented, what is ongoing, who generates the code and whether its repository is private.' },
     ],
     experienceTitle: <>QA where assumptions<br /><em>meet the system.</em></>,
-    experienceAside: 'A compact trace of systems and tools I have worked with. Open an entry for the details.',
+    experienceAside: 'A concise timeline of roles and tools across architecture, quality, automation and RPA projects.',
     current: 'Current', expand: 'Read note', collapse: 'Close note',
     experience: [
       { role: 'QA Analyst · Architecture & Quality (Lead)', detail: 'Quality audits and risk management for architecture and development projects. Automation with XRAY and Selenium; manual testing managed with Silk Central.' },
