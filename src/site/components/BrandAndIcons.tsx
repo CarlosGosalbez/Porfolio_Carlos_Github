@@ -3,5 +3,5 @@ export function ArrowIcon({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 export function Mark({ small = false }: { small?: boolean }) {
-  return <span className={`brand-mark${small ? ' brand-mark--small' : ''}`} aria-hidden="true"><span>C</span><i /><span>G</span></span>
+  return <img className={`brand-mark-image${small ? ' brand-mark-image--small' : ''}`} src={`${import.meta.env.BASE_URL}cg-mark.svg`} alt="" aria-hidden="true" />
 }
