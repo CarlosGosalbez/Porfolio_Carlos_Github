@@ -113,7 +113,7 @@ const copy: Record<Language, Copy> = {
       {
         name: 'Memento-F-tbol', category: 'PROYECTO PERSONAL · REPOSITORIO PRIVADO', headline: 'Un experimento de análisis llevado a término.',
         description: 'Herramienta privada de análisis probabilístico de fútbol. Proyecto personal completado.',
-        buildNotes: 'No hay código ni una ficha técnica pública; no atribuyo tecnologías que no estén publicadas.',
+        buildNotes: 'App autoalojada con Python y FastAPI, dashboard HTML/CSS/JavaScript y PostgreSQL en Supabase. El pipeline usa NumPy y SciPy; scikit-learn forma parte del entorno de experimentación.',
         contribution: 'Definí el objetivo, investigué opciones y orienté las iteraciones. La IA generó el código; revisé sus propuestas.',
         status: 'Completado', access: 'Código fuente: privado.',
       },
@@ -127,7 +127,7 @@ const copy: Record<Language, Copy> = {
       {
         name: 'financial-ai', category: 'EXPERIMENTO PERSONAL · REPOSITORIO PRIVADO', headline: 'Primero, que el análisis se pueda repetir.',
         description: 'Experimento en curso para estructurar pipelines reproducibles de datos y análisis financieros.',
-        buildNotes: 'Aún no publico código ni benchmarks; el estado visible aquí es exploratorio.',
+        buildNotes: 'Qanat organiza los pipelines en Python; PostgreSQL es el almacén persistente principal. DuckDB queda para análisis opcional y compatibilidad; el servicio local se ejecuta con Docker Compose.',
         contribution: 'Investigo alternativas y dirijo las iteraciones. La IA genera el código de este proyecto privado.',
         status: 'En exploración', access: 'Código fuente: privado.',
       },
@@ -202,7 +202,7 @@ const copy: Record<Language, Copy> = {
       {
         name: 'Memento-F-tbol', category: 'PERSONAL PROJECT · PRIVATE REPOSITORY', headline: 'An analysis experiment carried through to completion.',
         description: 'A private football probability analysis tool. Personal project completed.',
-        buildNotes: 'No public code or technical sheet is available; I do not claim technologies that have not been published.',
+        buildNotes: 'A self-hosted app built with Python and FastAPI, an HTML/CSS/JavaScript dashboard, and PostgreSQL on Supabase. Its pipeline uses NumPy and SciPy; scikit-learn is part of the experimentation environment.',
         contribution: 'I defined the goal, researched options and guided iterations. AI generated the code; I reviewed its suggestions.',
         status: 'Completed', access: 'Source code: private.',
       },
@@ -216,7 +216,7 @@ const copy: Record<Language, Copy> = {
       {
         name: 'financial-ai', category: 'PERSONAL EXPERIMENT · PRIVATE REPOSITORY', headline: 'Make the analysis repeatable first.',
         description: 'An ongoing experiment in structuring reproducible data and financial analysis pipelines.',
-        buildNotes: 'No code or benchmarks are public yet; the status here is exploratory.',
+        buildNotes: 'Qanat organizes the pipelines in Python; PostgreSQL is the primary persistent store. DuckDB is limited to optional analysis and compatibility; the local service runs with Docker Compose.',
         contribution: 'I research options and guide iterations. AI generates the code for this private project.',
         status: 'Exploratory', access: 'Source code: private.',
       },

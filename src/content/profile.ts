@@ -27,8 +27,8 @@ export const profile = {
       link: 'https://kickoff-rouge-ten.vercel.app/', linkLabel: 'product-site',
       logo: `${import.meta.env.BASE_URL}kickoff-icon.webp`, featureImage: `${import.meta.env.BASE_URL}kickoff-feature.webp`, visual: 'kickoff',
     },
-    { id: 'memento', number: '02', stack: [], visual: 'pipeline' },
+    { id: 'memento', number: '02', stack: ['Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'NumPy', 'SciPy', 'scikit-learn', 'JavaScript', 'HTML/CSS', 'Docker Compose'], visual: 'pipeline' },
     { id: 'my-pulse', number: '03', stack: ['Python', 'FastAPI', 'Supabase', 'LangGraph'], visual: 'my-pulse' },
-    { id: 'financial-ai', number: '04', stack: [], visual: 'financial-ai' },
+    { id: 'financial-ai', number: '04', stack: ['Python', 'Qanat', 'PostgreSQL', 'pandas', 'NumPy', 'FastAPI', 'DuckDB · opt-in', 'Docker Compose'], visual: 'financial-ai' },
   ],
 } as const
