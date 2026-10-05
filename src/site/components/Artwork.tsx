@@ -9,8 +9,8 @@ export function GridIllustration({ type, t, featureImage }: { type: string; t: (
 
 export function HeroGraphic({ label, language }: { label: string; language: Language }) {
   const copy = language === 'es'
-    ? { eyebrow: 'SISTEMA DE CALIDAD', title: 'Calidad desde el diseño', intro: 'Una visión conectada del trabajo de QA', stages: [['01', 'Arquitectura', 'Riesgos y criterios'], ['02', 'Automatización', 'Pruebas y validación'], ['03', 'Entrega', 'Calidad continua']], footer: 'QA · AUTOMATIZACIÓN · PRODUCTO' }
-    : { eyebrow: 'QUALITY ENGINEERING', title: 'Quality by design', intro: 'A connected view of quality work', stages: [['01', 'Architecture', 'Risks & acceptance'], ['02', 'Automation', 'Testing & validation'], ['03', 'Delivery', 'Continuous quality']], footer: 'QA · AUTOMATION · PRODUCT' }
+    ? { eyebrow: 'QA LOOP / 01', title: 'El test no acaba en verde', intro: 'Riesgo → check → revisión', stages: [['01', 'Contexto', 'Arquitectura y criterios'], ['02', 'Prueba', 'Automática o manual'], ['03', 'Revisión', 'Señal y seguimiento']], footer: 'REPEATABLE · TRACEABLE · REVIEWED' }
+    : { eyebrow: 'QA LOOP / 01', title: 'Green is not the end', intro: 'Risk → check → review', stages: [['01', 'Context', 'Architecture & criteria'], ['02', 'Test', 'Automated or manual'], ['03', 'Review', 'Signal & follow-up']], footer: 'REPEATABLE · TRACEABLE · REVIEWED' }
 
   return <div className="hero-graphic" role="img" aria-label={label}>
     <div className="hero-graphic__top"><span className="hero-graphic__monogram">CG</span><span>{copy.eyebrow}</span><i aria-hidden="true" /></div>
