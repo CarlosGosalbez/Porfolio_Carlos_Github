@@ -1,0 +1,17 @@
+.education-section { padding-top: clamp(3.5rem, 5vw, 4.5rem); }
+
+.education-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; border-top: 1px solid var(--line); }
+
+.education-item { display: flex; align-items: flex-start; gap: 1rem; min-height: 7.5rem; padding: 1.5rem 1rem 1.5rem 0; border-bottom: 1px solid var(--line); }
+
+.education-item:nth-child(odd) { border-right: 1px solid var(--line); }
+
+.education-item:nth-child(even) { padding-left: 1.5rem; }
+
+.education-item__icon { display: grid; width: 2rem; height: 2rem; flex: 0 0 auto; place-items: center; border-radius: 50%; color: var(--blue-link); background: var(--blue-light); font-size: .9rem; }
+
+.education-item h3 { margin: .15rem 0 .5rem; font-size: .79rem; letter-spacing: -.02em; }
+
+.education-item p { margin: 0; color: var(--muted); font-size: .7rem; line-height: 1.65; }
+
+.education-item p { font-size: .8rem; }

@@ -1,0 +1,47 @@
+.section-shell { width: min(100% - 2 * var(--page-pad), var(--content-max)); margin-inline: auto; }
+
+.section { padding-block: clamp(5.5rem, 11vw, 10rem); }
+
+.section-heading { max-width: 800px; }
+
+.section-index { display: inline-grid; width: 1.5rem; height: 1.5rem; margin-right: .65rem; place-items: center; border-radius: 50%; color: var(--blue-link); background: var(--section-index-bg); font: .6rem var(--mono); letter-spacing: 0; }
+
+.profile-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(3rem, 7vw, 5.8rem); }
+
+.profile-main { grid-column: 1 / span 7; }
+
+.lead { max-width: 46rem; margin: 0; font-size: clamp(1.28rem, 2.25vw, 2.15rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.45; }
+
+.body-copy { max-width: 38rem; margin: 1.4rem 0 1.7rem; color: var(--muted); font-size: .94rem; line-height: 1.85; }
+
+.inline-link { display: inline-flex; align-items: center; gap: .7rem; color: var(--blue-link); font-size: .77rem; font-weight: 800; }
+
+.inline-link svg { transition: transform .2s ease; }
+
+.inline-link:hover svg { transform: translateX(4px); }
+
+.profile-note { position: relative; grid-column: 9 / -1; align-self: start; min-height: 15rem; display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; color: white; background: var(--blue); }
+
+.profile-note > p { max-width: 17rem; margin: 2.5rem 0 2.4rem; font-size: 1.2rem; font-weight: 600; letter-spacing: -.03em; line-height: 1.4; }
+
+.profile-note > span { color: #ffffff9c; font: .55rem var(--mono); letter-spacing: .13em; }
+
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(4rem, 9vw, 7rem); border-top: 1px solid var(--line); }
+
+.approach-card { min-height: 12.5rem; padding: 1.5rem clamp(1rem, 2.4vw, 2.2rem) 1rem 0; }
+
+.approach-card + .approach-card { padding-left: clamp(1rem, 2.4vw, 2.2rem); border-left: 1px solid var(--line); }
+
+.approach-card__number { color: var(--blue-link); font: .65rem var(--mono); }
+
+.approach-card h3 { margin: 1.5rem 0 .65rem; font-size: .97rem; letter-spacing: -.03em; }
+
+.approach-card p { max-width: 19rem; margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.75; }
+
+.profile-section { padding-bottom: clamp(4rem, 6vw, 5.5rem); }
+
+.section-heading--row { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+
+.section-heading--row h2 { max-width: 720px; }
+
+.section-aside { max-width: 20rem; margin: 0 0 .4rem; color: #aab5af; font-size: .88rem; line-height: 1.8; }

@@ -1,0 +1,69 @@
+.experience-section { padding-bottom: clamp(5.5rem, 10vw, 9rem); }
+
+.experience-list { margin-top: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--line); }
+
+.experience-item { position: relative; display: grid; grid-template-columns: 2.2fr 4fr 5fr; gap: 2rem; padding: 2rem 1.5rem 2rem 0; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
+
+.experience-item:hover { padding-inline: 1rem; background: var(--surface-hover); }
+
+.experience-item__period { padding-top: .2rem; color: var(--text-subtle); font: .59rem var(--mono); letter-spacing: .06em; }
+
+.experience-item__main h3 { margin: 0; font-size: .94rem; letter-spacing: -.03em; }
+
+.experience-item__main > p { margin: .5rem 0 0; color: var(--blue-link); font-size: .72rem; font-weight: 700; }
+
+.experience-item__detail { max-width: 31rem; margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.75; }
+
+.experience-item__marker { position: absolute; top: 2.5rem; right: 0; width: .45rem; aspect-ratio: 1; border: 1px solid #adb7b1; border-radius: 50%; }
+
+.experience-item--current .experience-item__marker { border-color: var(--blue); background: var(--blue); box-shadow: 0 0 0 .25rem #394ee922; }
+
+.experience-item--current .experience-item__period { color: var(--blue-link); }
+
+.experience-item { display: block; padding: 0; }
+
+.experience-item:hover { padding-inline: 0; }
+
+.experience-item summary { position: relative; display: grid; grid-template-columns: 2.2fr 4fr 5fr; gap: 2rem; align-items: center; min-height: 6.3rem; padding: 1.45rem 1.5rem 1.45rem 0; list-style: none; cursor: pointer; transition: background .2s, padding .2s; }
+
+.experience-item summary::-webkit-details-marker { display: none; }
+
+.experience-item summary:hover { padding-inline: 1rem; background: var(--surface-hover); }
+
+.experience-item__main { display: grid; gap: .48rem; }
+
+.experience-item__main strong { font-size: .94rem; letter-spacing: -.03em; }
+
+.experience-item__main > span { color: var(--blue-link); font-size: .72rem; font-weight: 700; }
+
+.experience-current { color: var(--blue-link); }
+
+.experience-item__toggle { display: flex; align-items: center; justify-content: flex-end; gap: .75rem; color: var(--text-subtle); font: .6rem var(--mono); text-align: right; }
+
+.experience-item__toggle i { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--blue-link); font: normal 1rem var(--mono); transition: transform .25s, color .25s, background .25s; }
+
+.experience-item[open] .experience-item__toggle i { color: white; background: var(--blue); transform: rotate(45deg); }
+
+.experience-item__detail { max-width: 45rem; margin: 0 4rem 1.65rem calc(19.6% + 2rem); padding-left: 1rem; border-left: 2px solid var(--green-dark); color: var(--muted); font-size: .78rem; line-height: 1.8; animation: accordion-in .3s ease both; }
+
+.experience-label--closed { display: none; }
+
+.experience-item:not([open]) .experience-label--open { display: none; }
+
+.experience-item:not([open]) .experience-label--closed { display: inline; }
+
+.experience-item__period { font-size: .69rem; }
+
+.experience-item__toggle { font-size: .67rem; }
+
+.industry-experience { display: grid; grid-template-columns: minmax(15rem, .8fr) 1.2fr; align-items: center; gap: 2rem; margin-top: 2rem; padding-top: 1.55rem; border-top: 1px solid var(--line); }
+.industry-experience__copy .eyebrow { margin: 0; color: var(--blue-link); font-size: .62rem; }
+.industry-experience__copy > p:last-child { max-width: 34rem; margin: .6rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; }
+.industry-experience ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.industry-experience li { padding: .55rem .8rem; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--text-strong); background: var(--surface-card); font-size: .72rem; font-weight: 650; }
+
+@media (max-width: 700px) {
+  .industry-experience { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.2rem; }
+  .industry-experience ul { justify-content: flex-start; gap: .45rem; }
+  .industry-experience li { padding: .48rem .68rem; font-size: .68rem; }
+}

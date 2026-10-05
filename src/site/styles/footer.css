@@ -1,0 +1,7 @@
+.site-footer { min-height: 5.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.footer-brand, .footer-links, .footer-links a { display: inline-flex; align-items: center; gap: .55rem; }
+.footer-brand > span { font-size: .59rem; font-weight: 800; letter-spacing: .09em; }
+.site-footer > p, .footer-links > span, .footer-links a { margin: 0; color: var(--text-subtle); font-size: .62rem; }
+.footer-links { gap: 1.4rem; }
+.footer-links a { color: var(--blue-link); font-weight: 700; }
+.footer-links svg { width: .8rem; }
